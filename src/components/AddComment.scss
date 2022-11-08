@@ -1,0 +1,44 @@
+@import "../index.scss";
+
+.add-comment{
+    background-color: $color-white;
+    padding: 2rem;
+    display: grid;
+
+    @include lg(){
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: 1fr;
+        padding: 4rem 2rem;
+    }
+
+    & > textarea{
+        @include lg(){
+            grid-column: 3 / 11;
+        }
+    }
+
+   & > img{
+        @include lg(){
+            grid-column: 1 / 3;
+            grid-row: 1/ 2;
+            align-self: center;
+            justify-self: center;
+        }
+    }
+
+    .btn-send{
+        justify-self: flex-end;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
+        font-size: inherit;
+        background-color: $light-blue;
+        color: white;
+        border: none;
+        cursor: pointer;
+        @include lg(){
+            grid-column: 11 / -1;
+            justify-self: center;
+            align-self: center;
+        }
+    }
+}

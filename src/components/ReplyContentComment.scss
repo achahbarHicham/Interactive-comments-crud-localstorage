@@ -1,0 +1,152 @@
+@import "../index.scss";
+.reply-to-comment{
+    padding: 2rem;
+    background-color: white;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    @include md(){
+        margin-bottom: 3rem;
+    }
+    .reply-content{
+
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+
+        @include lg(){
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 1fr 1fr;
+            row-gap: 1rem;
+        }
+
+        &--header{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 2rem;
+            grid-column: 1 / -1;
+
+            @include lg(){
+                grid-column: 2 / 9;
+                align-self: center;
+                margin-bottom: 0;
+            }
+
+             & > h4{
+                color: black !important;
+            }
+            @include sm(){
+                gap: 2rem;
+            }
+            span{
+                background-color: $light-blue;
+                color: white;
+                font-weight: 700;
+                padding: .5rem;
+            }
+        }
+        &--text{
+            grid-column: 1 / -1;
+            @include lg(){
+                grid-column: 2 / -1;
+                grid-row: 2 / -1;
+            }
+            span{
+                color: $light-blue;
+                font-weight: 700;
+            }
+            color: $GrayishBlue;
+            line-height: 1.7;
+        }
+
+       .reply-buttons{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        @include lg(){
+            grid-column: 1 / 2;
+            grid-row: 1 / -1;
+            margin-top: 0;
+        }
+
+        &--btns{
+            grid-column: 3 / -1;
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+            @include lg(){
+                grid-column: 10 / -1;
+                grid-row: 1 / 2;
+                margin-top: 0;
+            }
+            button{
+                padding: 1rem 2rem;
+                border: none;
+                outline: none;
+                font-size: inherit;
+                margin-left: 1rem;
+                background-color: transparent;
+                cursor: pointer;
+                display: flex;
+                svg{
+                    margin-right: .5rem;
+                }
+                &.btn-delete{
+                    color: red;
+                }
+            }
+        }
+
+
+     
+       }
+
+       .update-on-reply-comment{
+        padding: 1.5rem 2rem;
+        font-size: inherit;
+        border: none;
+        outline: none;
+        background-color: $light-blue;
+        color: white;
+        border-radius: 1rem;
+        grid-column: 3 / -1;
+        margin-top: 2rem;
+        cursor: pointer;
+        @include lg(){
+            grid-column: 11 / -1
+        }
+       }
+
+
+       h4{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: $light-blue;
+        cursor: pointer;
+        grid-column: 3 / -1;
+        svg{
+            margin-right: .5rem;
+        }
+    }
+
+
+       .update-reply-comment{
+        width: 100%;
+        min-height: 15rem;
+        resize: none;
+        border: 1px solid $veryLight;
+        font-size: inherit;
+        padding: 1rem;
+        font-family: inherit;
+        line-height: 1.7;
+        color: $GrayishBlue;
+        grid-column: 1 / -1;
+        @include lg(){
+            grid-column: 2 / -1;
+        }
+        &:focus{
+            border: 1px solid $light-blue;
+        }
+       }
+    }
+}
